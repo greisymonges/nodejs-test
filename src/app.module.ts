@@ -7,9 +7,10 @@ import { UserModule } from './modules/user/user.module';
 import { FileModule } from './modules/file/file.module';
 import { DatabaseModule } from './database/database.module';
 import { EmailModule } from './modules/email/email.module';
+import { AwsS3Module } from './modules/aws-s3/aws-s3.module';
 
 @Module({
-  imports: [UserModule, FileModule, ConfigModule.forRoot({ isGlobal: true }), DatabaseModule, EmailModule],
+  imports: [UserModule, FileModule, ConfigModule.forRoot({ isGlobal: true }), DatabaseModule, EmailModule, AwsS3Module],
   controllers: [],
   providers: [],
 })

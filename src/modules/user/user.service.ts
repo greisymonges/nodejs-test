@@ -11,6 +11,7 @@ import { ConfigService } from '@nestjs/config';
 import { UserModule } from './user.module';
 import { Token } from './entities';
 import { EmailService } from '../email/email.service';
+import { TokenPayload } from '../../common/auth';
 
 @Injectable()
 export class UserService {

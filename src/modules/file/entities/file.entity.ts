@@ -13,6 +13,9 @@ export class File {
     @Column({ nullable: false })
     name: string;
 
+    @Column({ nullable: false })
+    url: string;
+
     @ManyToOne(type => User, user => user.files, { cascade: true })
     @JoinColumn({ name: 'user_id' })
     user: User;
