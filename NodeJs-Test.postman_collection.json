@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "e8825cce-fc6a-4b90-b24e-9bc52bbfa5d4",
+		"name": "NodeJs-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[USER] - Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Greisy\",\r\n    \"lastName\": \"Monges\",\r\n    \"email\": \"greisymonges@gmail.com\",\r\n    \"username\": \"greisymonges\",\r\n    \"password\": \"Grey22041983@\",\r\n    \"confirm\": \"Grey22041983@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/users",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[USER] - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"greisymonges\",\r\n    \"password\": \"Grey22041983@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/users/login",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[USER] - Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/users/logout",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[USER] - Forget Password",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"greisymonges@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/users/forget-pwd",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"users",
+						"forget-pwd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[USER] - Reset Password",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY3MDYwMDQxMiwiZXhwIjoxNjcwNjg2ODEyfQ.KGQqYjtoiKqGeIRq0nCEjX9jHafxEadVAiG9DlyniS8\",\r\n    \"password\": \"Tina22041983@\",\r\n    \"confirm\": \"Tina22041983@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/users/reset-pwd",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"users",
+						"reset-pwd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FILE] - Upload File AWS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Reinaldo Aru/Downloads/BACKEND DEVELOPER JAVA Y NODE.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/files/fileAws",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"files",
+						"fileAws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FILE] - Dowload File AWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/files/fileAws/1",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"files",
+						"fileAws",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FILE] - Update File",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"BACKEND DEVELOPER JAVA Y NODE 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/files/file",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"files",
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FILE] - Get By User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/files/1?limit=10&offset=10",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"files",
+						"1"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

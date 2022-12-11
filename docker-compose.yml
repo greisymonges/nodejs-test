@@ -28,3 +28,12 @@ services:
       - 8080:80
     depends_on:
       - db
+
+  #nestjs-test:
+    #image: nestjs-test #nombre de la imagen que hemos creado
+    #restart: always
+    #container_name: nestjs-test
+    #ports:
+      #- '3000:3000'
+    #depends_on:
+      #- db
